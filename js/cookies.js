@@ -22,7 +22,8 @@ function setCookie(cookieName, cookieValue) {
     let minTime = new Date();
     minTime.setTime(minTime.getTime() + (1 * 60 * 1000));
     let expires = "expires=" + minTime;
-    document.cookie = cookieName + "=" + cookieValue + "; " + expires;
+    let aux = cookieName + "=" + cookieValue + "; " + expires + "; path='http://127.0.0.1:5500/' ; SameSite=Strict;";
+    document.cookie = aux;
 }
 
 function getCookie(cookieName) {
