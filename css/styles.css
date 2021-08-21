@@ -18,6 +18,10 @@ p {
     margin-bottom: 0;
 }
 
+.display-none {
+    display: none !important;
+}
+
 /* HEADER */
 #header {
     background-color: #FFFFFF;
@@ -28,14 +32,6 @@ p {
     left: 0;
 }
 
-.header-container {
-    margin: 24px auto 22px auto;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
 .header-container,
 .characters-section,
 .episodes-section,
@@ -44,8 +40,16 @@ p {
 .trailer-video {
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header-container {
+    margin: 24px auto 22px auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 /* HEADER-LOGO*/
@@ -57,8 +61,6 @@ p {
 .header-logo img,
 .footer-logo img {
     margin: auto;
-    top: 0;
-    bottom: 0;
 }
 
 .img-portal {
@@ -154,9 +156,9 @@ p {
     transition: all .5s ease-in-out;
     width: 50px;
     height: 6px;
-    background: #fff;
+    background: #7DCA2C;
     border-radius: 5px;
-    box-shadow: 0 1px 2px #7DCA2C;
+    box-shadow: 0 1px 2px #252543;
 }
 
 .menu-btn-ham::before,
@@ -167,9 +169,9 @@ p {
     left: 4px;
     width: 50px;
     height: 6px;
-    background: #fff;
+    background: #7DCA2C;
     border-radius: 5px;
-    box-shadow: 0 1px 2px #7DCA2C;
+    box-shadow: 0 1px 2px #252543;
 }
 
 .menu-btn-ham::before {
@@ -428,42 +430,48 @@ p {
 .character-card {
     width: 100%;
     height: 100%;
-    font-weight: 700; 
+    font-weight: 700;
     text-align: center;
     padding: 34px 40px 40px;
     background-color: #FFFFFF;
     border: 1px solid #E5E8EB;
     border-radius: 6px;
-    /* box-shadow: 0px 10px 20px 0px rgba(125, 202, 44, 0.75); */
-    box-shadow: 0px 6px 10px rgb(125, 202, 44);
+    box-shadow: 0px 6px 10px #7DCA2C;
 }
-.character-card img{
+
+.character-card img {
     width: 207px;
     height: 207px;
     display: block;
     margin: auto;
     margin: 0 auto 44px;
 }
-.character-card h4{
+
+.character-card h4 {
     color: #142133;
     font-size: 24px;
     line-height: 44px;
     margin: 0 0 10px;
 }
-.character-card p{
+
+.character-card p {
     color: #949FAD;
     font-size: 20px;
     line-height: 34px;
 }
-.character-card .status-alive{
+
+.character-card .status-alive {
     color: #0CC51F;
 }
-.character-card .status-unknown{
+
+.character-card .status-unknown {
     color: #3653C9;
 }
-.character-card .status-dead{
+
+.character-card .status-dead {
     color: #EC2727;
 }
+
 .characters-text span,
 .episodes-text span,
 .trailer-text span {
@@ -770,7 +778,7 @@ p {
 
     .trailer-video {
         position: relative;
-        padding-bottom: 55.76%;
+        padding-bottom: 56.25%;
         height: 0;
         overflow: hidden;
     }
@@ -951,6 +959,7 @@ p {
         padding: 0 41px;
         width: 33.33%;
     }
+
     .characters-container {
         max-width: 1364px;
         margin: 0 auto 341px;

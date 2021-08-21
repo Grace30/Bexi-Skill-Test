@@ -20,20 +20,19 @@ function fillCard(card, char) {
     }
 }
 
-
-
-(function () {
+function getChars() {
     let ids = [];
     while (ids.length < 5) {
-        // 671 personajes
         let tempID = getRandomInt(1, 671);
         if (!ids.find(e => e === tempID)) ids.push(tempID);
     }
     ids = ids.join(",");
-    fetch("https://rickandmortyapi.com/api/character/" + ids).then(e => e.json())
-    .then(function(json) {
-        document.querySelectorAll('.character-card').forEach(function(card, index) {
+    fetch("https://rickandmortyapi.com/api/character/" + ids).then(e => e.json()).then(function (json) {
+        document.querySelectorAll('.character-card').forEach(function (card, index) {
             fillCard(card, json[index]);
-        })
+        });
     });
-})();
+}
+
+
+window.onload = getChars();

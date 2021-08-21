@@ -20,10 +20,9 @@ submitInput.addEventListener('click', function () {
 
 function setCookie(cookieName, cookieValue) {
     let minTime = new Date();
-    minTime.setTime(minTime.getTime() + (1 * 60 * 1000));
-    let expires = "expires=" + minTime;
-    let aux = cookieName + "=" + cookieValue + "; " + expires + "; path='http://127.0.0.1:5500/' ; SameSite=Strict;";
-    document.cookie = aux;
+    minTime.setTime(minTime.getTime() + (5 * 60 * 1000));
+    let expires = "expires=" + minTime.toUTCString();
+    document.cookie = cookieName + "=" + cookieValue + "; " + expires + "; path=/";
 }
 
 function getCookie(cookieName) {
@@ -46,33 +45,27 @@ function checkCookie() {
     emailInput.value = '';
     let userName = getCookie('user-data');
     let userEmail = getCookie('email-data');
+    let spanHeader = document.createElement("span");
+    let titleSub = document.createElement("span");
+    let titleEmail = document.createElement("span");
     if (userName != "" && userEmail != "") {
-        msjDiv.style.display = 'block';
-        // msjDiv.classList.add('display-none');
+        msjDiv.classList.remove('display-none');
         titleMsj.innerHTML = 'Welcome back ' + userName;
-        formDiv.style.display = 'none';
-        ctaHeader.style.display = 'none';
-        // ctaHeader.classList.toggle('display-none');
-        ctaFooter.style.display = 'none';
-        let spanHeader = document.createElement("span");
+        formDiv.classList.add('display-none');
+        ctaHeader.classList.add('display-none');
+        ctaFooter.classList.add('display-none');
         spanHeader.className = "user-name";
         spanHeader.textContent = userName;
         titleHeader.textContent = 'Welcome back ';
         titleHeader.appendChild(spanHeader);
-        let titleSub = document.createElement("span");
-        let titleEmail = document.createElement("span");
         titleSub.className = "title-subs";
         titleSub.textContent = 'You are Already Subscribed';
         titleEmail.className = "title-email";
         titleEmail.textContent = userEmail;
         emailDiv.appendChild(titleSub);
         emailDiv.appendChild(titleEmail);
-
-
     } else {
-        formDiv.style.display = 'block';
-        msjDiv.style.display = 'none';
-        ctaHeader.style.display = 'flex';
+        msjDiv.classList.add('display-none');
     }
 }
 

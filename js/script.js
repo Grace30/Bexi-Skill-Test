@@ -10,11 +10,11 @@ menuBtn.addEventListener('click', () => {
         menuOpen = false;
     }
 });
+
 window.addEventListener('load', function () {
     document.querySelector('nav button').addEventListener('click', function () {
         document.querySelector('nav').classList.toggle('display');
     });
-
     document.documentElement.addEventListener('click', function (event) {
         if (event.target.closest('header') == null) resetMenu();
     });
