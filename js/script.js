@@ -1,6 +1,9 @@
 let menuBtn = document.querySelector('.menu-btn');
 let menuOpen = false;
 
+let logoHome = document.querySelector('#logo');
+logoHome.setAttribute('href', window.location.href);
+
 menuBtn.addEventListener('click', () => {
     if (!menuOpen) {
         menuBtn.classList.add('open');
